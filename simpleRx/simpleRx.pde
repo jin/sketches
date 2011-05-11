@@ -6,6 +6,13 @@ XBee xbee = XBee();
 XBeeResponse response = XBeeResponse();
 Rx64Response rx64 = Rx64Response();
 
+void blinkLED(int interval){
+    digitalWrite(pinLED, HIGH);
+    delay(interval);
+    digitalWrite(pinLED, LOW);
+}
+
+
 void setup(){
     pinMode(pinLED, OUTPUT);
     pinMode(pinBUTTON, INPUT);
@@ -16,8 +23,6 @@ void loop(){
     xbee.readPacket();
     if (xbee.getResponse().isAvailable()){
         xbee.getResponse().getRx64Response(rx64);
-        digitalWrite(pinLED, HIGH);
-        delay(100);
-        digitalWrite(pinLED,LOW);
+        blinkLED(100);
     }
 }

@@ -7,6 +7,12 @@ XBee xbee = XBee();
 uint8_t pktPayload[] = {'H', 'e','l','l','o',' ','W','o','r','l','d','\n','\r'};
 XBeeAddress64 addr64 = XBeeAddress64(0x00000000, 0x0000FFFF);
 
+void blinkLED(int interval){
+    digitalWrite(pinLED, HIGH);
+    delay(interval);
+    digitalWrite(pinLED, LOW);
+}
+
 void setup(){
     pinMode(pinLED, OUTPUT);
     pinMode(pinBUTTON, INPUT);
@@ -16,8 +22,6 @@ void setup(){
 void loop(){
     Tx64Request txReq = Tx64Request(addr64, pktPayload, sizeof(pktPayload));
     xbee.send(txReq);
-    digitalWrite(pinLED, HIGH);
-    delay(5);
-    digitalWrite(pinLED, LOW);
+    blinkLED(5);
     delay(1000);
 }
