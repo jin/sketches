@@ -1,4 +1,4 @@
-Tested with:
-- Fio
-- Duemilanove
+Tested with:\n
+- Fio\n
+- Duemilanove\n
 
