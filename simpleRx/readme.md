@@ -1,4 +1,1 @@
-Works with:
-* Fio
-* Duemilanove
-
+Tested with Fio & Duemilanove
