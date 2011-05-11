@@ -1,4 +1,1 @@
-Tested with:\n
-- Fio\n
-- Duemilanove\n
-
+Tested with Fio & Duemilanove
