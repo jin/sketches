@@ -1,5 +1,17 @@
 #include <XBee.h>
 
+#define xb1High 0x0013A200
+#define xb1Low 0x40492A47
+
+#define xb2High 0x0013A200
+#define xb2Low 0x40492704
+
+#define xb3High 0x0013A200
+#define xb3Low 0x406938DC
+
+#define xbBroadcastHigh 0x00000000
+#define xbBroadcastLow 0x00000000
+
 const int pinLED = 13;
 const int pinBUTTON = 2;
 XBee xbee = XBee();
@@ -26,7 +38,7 @@ void loop(){
     xbee.readPacket();
     if (xbee.getResponse().isAvailable()){
         xbee.getResponse().getRx64Response(rx64);
-        data = rx64.getData();
+        data[] = rx64.getData();
         offset = rx64.getDataOffset();
         int arrayLength = rx64.getDataLength(); 
         for (int i = 0 - offset; i < arrayLength; i++){
