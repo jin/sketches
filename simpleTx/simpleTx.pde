@@ -10,7 +10,7 @@
 #define xb3Low 0x406938DC
 
 #define xbBroadcastHigh 0x00000000
-#define xbBroadcastLow 0x00000000
+#define xbBroadcastLow 0x0000FFFF
 
 const uint8_t pinLED = 13;
 const uint8_t pinBUTTON = 2;
